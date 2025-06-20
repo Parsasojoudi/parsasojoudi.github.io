@@ -40,7 +40,7 @@ const Index = () => {
             <div className="animate-fade-in">
               <div className="relative">
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  src="/lovable-uploads/5b744b10-25fb-44d8-9abb-36480a484054.png"
                   alt="Professional headshot"
                   className="rounded-lg shadow-2xl w-full max-w-md mx-auto"
                 />

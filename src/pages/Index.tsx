@@ -1,4 +1,3 @@
-
 import { ArrowRight, Download, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -16,7 +15,7 @@ const Index = () => {
                 <span className="text-[#00BFFF]">Parsa Sojoudi</span>
               </h1>
               <p className="text-xl md:text-2xl mb-8 text-gray-300">
-                1L Law Student • Chemist • Research Specialist
+                JD Candidate at UVic Law, Class of 2028
               </p>
               <p className="text-lg mb-8 text-gray-400 leading-relaxed">
                 Combining scientific expertise with legal studies. Currently pursuing a Juris Doctor at the University of Victoria, 

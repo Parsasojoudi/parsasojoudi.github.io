@@ -4,51 +4,99 @@ import { Calendar, MapPin, Building, GraduationCap } from "lucide-react";
 const Experience = () => {
   const workExperience = [
     {
-      title: "Senior Legal Counsel & Technology Advisor",
-      company: "Innovation Tech Corp",
-      location: "San Francisco, CA",
-      dates: "2022 - Present",
+      title: "Full-time Research and Development Engineer",
+      company: "Brokkr Mineral Resources Corp.",
+      location: "Burnaby, BC, Canada",
+      dates: "Feb. 2024 - Present",
       duties: [
-        "Lead legal strategy for emerging technology initiatives and IP portfolio management",
-        "Advise engineering teams on regulatory compliance for AI and data privacy",
-        "Negotiate complex technology licensing agreements and strategic partnerships",
-        "Develop legal frameworks for agile development and product launches"
+        "Full-time Research and Development Engineer",
+        "Peptide synthesis, design, and engineering for the use of metal chelation",
+        "Conducting fundamental and analytical report writing to support the Research and Development Team",
+        "Responsible for budget planning and roadmap development for current and future projects"
       ]
     },
     {
-      title: "Co-Founder & Chief Technology Officer",
-      company: "LegalTech Innovations",
-      location: "Austin, TX",
-      dates: "2020 - 2022",
+      title: "Part-time Polymer Engineering Intern",
+      company: "Brokkr Mineral Resources Corp.",
+      location: "Burnaby, BC, Canada", 
+      dates: "Oct. 2022 - Dec. 2023",
       duties: [
-        "Co-founded legal technology startup focused on contract automation",
-        "Led technical architecture and development of SaaS platform",
-        "Secured $2.5M in seed funding and built engineering team of 12",
-        "Established legal compliance frameworks for enterprise clients"
+        "Part-time Polymer Engineering Intern",
+        "Prepared analytical reports to support the R&D team",
+        "Managed lab equipment and supported research activities",
+        "Assisted in budget planning and roadmap development for ongoing and upcoming projects"
       ]
     },
     {
-      title: "Associate Attorney",
-      company: "Morrison & Associates LLP",
-      location: "New York, NY",
-      dates: "2018 - 2020",
+      title: "Tutor",
+      company: "Teachers' Tutoring Service",
+      location: "Vancouver, BC, Canada",
+      dates: "Feb. 2024 - Present",
       duties: [
-        "Specialized in intellectual property litigation and technology transactions",
-        "Managed patent prosecution portfolio for Fortune 500 clients",
-        "Conducted legal research and drafted briefs for complex IP disputes",
-        "Collaborated with technical experts on software and hardware IP matters"
+        "Provided tutoring in Mathematics and Chemistry for all high school grades",
+        "Specialized in tutoring AP Chemistry and AP Calculus",
+        "Experienced in working with students with learning disabilities, including Autism"
       ]
     },
     {
-      title: "Software Engineering Intern",
-      company: "Google",
-      location: "Mountain View, CA",
-      dates: "Summer 2017",
+      title: "Math and Chemistry Tutor",
+      company: "Aspire Learning Academy",
+      location: "West Vancouver, BC, Canada",
+      dates: "Aug. 2021 - Dec. 2023",
       duties: [
-        "Developed machine learning algorithms for search optimization",
-        "Collaborated with cross-functional teams on product feature development",
-        "Implemented performance improvements resulting in 15% speed increase",
-        "Presented technical findings to senior engineering leadership"
+        "Tutoring Math and Chess to all high school grades",
+        "Teacher of Advanced Math and Chemistry"
+      ]
+    },
+    {
+      title: "Research Assistant",
+      company: "Department of Chemistry, Simon Fraser University",
+      location: "Burnaby, BC, Canada",
+      dates: "Sept. 2021 - Dec. 2023",
+      duties: [
+        "Working on Lateral Flow Assay design to differentiate between different types of ginseng DNA sequences as my master's project",
+        "Designing a colorimetric SNP detection device",
+        "Senior supervisor: Dr. Paul C. H. Li, co-supervisors: Dr. Gary Leach and Dr. Bonnie Gray"
+      ]
+    },
+    {
+      title: "Teaching Assistant",
+      company: "Department of Chemistry, Simon Fraser University",
+      location: "Burnaby, BC, Canada",
+      dates: "Sept. 2021 - Dec. 2023",
+      duties: [
+        "Teaching Assistant for General Chemistry Laboratory I (CHEM 125) under the supervision of Drs. Rebecca Goyan, and Garry Mund",
+        "Teaching Assistant for Introductory Chemistry CHEM 110/111 under the supervision of James Zhou and Dr. Dev Sharma"
+      ]
+    },
+    {
+      title: "Research Assistant",
+      company: "Membrane Center of Tehran",
+      location: "Tehran, Iran",
+      dates: "Summer 2018",
+      duties: [
+        "Investigation of synthesis magnetic gold-coated poly (ε-caprolactonediol) for controlled release of paclitaxel and 5-FU under the supervision of Dr. Irani.",
+        "Co-authored and collaborated in an academic publication on the synthesis of magnetic gold-coated poly (ε-caprolactonediol)"
+      ]
+    },
+    {
+      title: "Sales Associate",
+      company: "Mango",
+      location: "Tehran, Iran",
+      dates: "Jun. 2017 - Oct. 2017",
+      duties: [
+        "Sales Associate",
+        "Assisted customers, managed inventory, processed transactions, and maintained store organization."
+      ]
+    },
+    {
+      title: "Math and Chemistry Teacher",
+      company: "Salam 4 High School",
+      location: "Tehran, Iran",
+      dates: "Sep. 2016 - Sep. 2020",
+      duties: [
+        "Tutoring Math and Chemistry to all high school grades",
+        "Teacher of Advanced Math and Chemistry in a class of 30 students"
       ]
     }
   ];
@@ -56,27 +104,27 @@ const Experience = () => {
   const education = [
     {
       degree: "Juris Doctor (J.D.)",
-      institution: "Harvard Law School",
-      location: "Cambridge, MA",
-      dates: "2015 - 2018",
-      honors: "Magna Cum Laude, Harvard Law Review",
-      details: "Focus on Intellectual Property and Technology Law"
+      institution: "Faculty of Law, University of Victoria",
+      location: "Victoria, BC, Canada",
+      dates: "Sept. 2025 - May. 2028",
+      honors: "Incoming 1L Student, Class of 2028",
+      details: "Passionate about Business Law, with a strong interest in Intellectual Property Law, Technology Law, Patent Law, and Mergers & Acquisitions (M&A)."
     },
     {
-      degree: "Master of Science in Computer Science",
-      institution: "Stanford University",
-      location: "Stanford, CA",
-      dates: "2013 - 2015",
-      honors: "GPA: 3.9/4.0",
-      details: "Specialization in Artificial Intelligence and Machine Learning"
+      degree: "Master of Science in Chemistry",
+      institution: "Simon Fraser University",
+      location: "Burnaby, BC, Canada", 
+      dates: "Sept. 2021 - Dec. 2023",
+      honors: "Master's Thesis: 'Development of a Paper-based Microfluidic Assay based on the Nucleic Acid Amplification Test (NAAT) for Ginseng Species Authentication'",
+      details: "Completed Dec 14th, 2023, under the supervision of Dr. Paul C. H. Li."
     },
     {
-      degree: "Bachelor of Science in Electrical Engineering",
-      institution: "MIT",
-      location: "Cambridge, MA",
-      dates: "2009 - 2013",
-      honors: "Summa Cum Laude, Phi Beta Kappa",
-      details: "Minor in Computer Science and Entrepreneurship"
+      degree: "Bachelor of Science in Polymer Engineering",
+      institution: "School of Chemical Engineering, University of Tehran",
+      location: "Tehran, Iran",
+      dates: "Sept. 2016 - Sept. 2020",
+      honors: "Ranked 5th out of 30 Polymer Engineering Majors",
+      details: "GPA of last two years: 17/20 (equivalent to an A in the Iranian grading system)"
     }
   ];
 
@@ -89,7 +137,7 @@ const Experience = () => {
             Professional Experience
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            A comprehensive overview of my career journey across law, technology, and entrepreneurship
+            A comprehensive overview of my career journey from chemistry research to legal studies
           </p>
         </div>
 

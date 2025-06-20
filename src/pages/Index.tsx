@@ -13,14 +13,14 @@ const Index = () => {
             <div className="animate-fade-in">
               <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
                 Hello, I'm{" "}
-                <span className="text-[#00BFFF]">Your Name</span>
+                <span className="text-[#00BFFF]">Parsa Sojoudi</span>
               </h1>
               <p className="text-xl md:text-2xl mb-8 text-gray-300">
-                Legal Professional • Engineer • Entrepreneur
+                1L Law Student • Chemist • Research Specialist
               </p>
               <p className="text-lg mb-8 text-gray-400 leading-relaxed">
-                Bridging the gap between law, technology, and innovation. 
-                Passionate about creating solutions at the intersection of legal expertise and engineering excellence.
+                Combining scientific expertise with legal studies. Currently pursuing a Juris Doctor at the University of Victoria, 
+                with extensive research experience in chemistry and a passion for intellectual property and technology law.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/about">
@@ -40,7 +40,7 @@ const Index = () => {
             <div className="animate-fade-in">
               <div className="relative">
                 <img
-                  src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                   alt="Professional headshot"
                   className="rounded-lg shadow-2xl w-full max-w-md mx-auto"
                 />
@@ -61,10 +61,10 @@ const Index = () => {
             <Link to="/experience" className="group">
               <div className="bg-[#FAFAFA] p-8 rounded-lg shadow-md hover:shadow-xl transition-all hover:scale-105 border-l-4 border-[#00BFFF]">
                 <h3 className="text-xl font-semibold mb-4 text-[#2C3E50] group-hover:text-[#00BFFF] transition-colors">
-                  Professional Experience
+                  Academic & Professional Experience
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  Discover my journey through law, engineering, and entrepreneurship with detailed work history and educational background.
+                  Discover my journey from chemistry research to law school, including my work in analytical chemistry and teaching experience.
                 </p>
                 <span className="text-[#00BFFF] font-medium group-hover:underline">
                   View Experience →
@@ -75,10 +75,10 @@ const Index = () => {
             <Link to="/achievements" className="group">
               <div className="bg-[#FAFAFA] p-8 rounded-lg shadow-md hover:shadow-xl transition-all hover:scale-105 border-l-4 border-[#1ABC9C]">
                 <h3 className="text-xl font-semibold mb-4 text-[#2C3E50] group-hover:text-[#1ABC9C] transition-colors">
-                  Achievements & Awards
+                  Research & Publications
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  Explore my professional recognitions, patents, and notable projects that showcase my expertise and impact.
+                  Explore my research publications, academic achievements, and contributions to analytical chemistry and nucleic acid research.
                 </p>
                 <span className="text-[#1ABC9C] font-medium group-hover:underline">
                   View Achievements →
@@ -92,7 +92,7 @@ const Index = () => {
                   Resume & CV
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  Download my complete resume or view my comprehensive CV with detailed information about my background.
+                  Download my complete curriculum vitae with detailed information about my academic background and research experience.
                 </p>
                 <span className="text-[#E74C3C] font-medium group-hover:underline">
                   <Download className="inline mr-1" size={16} />

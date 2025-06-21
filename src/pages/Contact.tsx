@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send, Linkedin, Twitter, Facebook } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Linkedin, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -104,7 +104,7 @@ const Contact = () => {
                   rel="noopener noreferrer"
                   className="bg-[#1DA1F2] p-3 rounded-full text-white hover:bg-[#1a91da] transition-colors"
                 >
-                  <Twitter size={20} />
+                  <X size={20} />
                 </a>
               </div>
             </div>

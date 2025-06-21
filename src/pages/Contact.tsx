@@ -65,7 +65,7 @@ const Contact = () => {
                 <Mail className="text-[#00BFFF] mt-1 mr-4" size={24} />
                 <div>
                   <h3 className="font-semibold text-[#2C3E50] mb-1">Email</h3>
-                  <p className="text-gray-600">your.email@example.com</p>
+                  <p className="text-gray-600">sojoudiparsa@gmail.com</p>
                 </div>
               </div>
               
@@ -73,7 +73,7 @@ const Contact = () => {
                 <Phone className="text-[#00BFFF] mt-1 mr-4" size={24} />
                 <div>
                   <h3 className="font-semibold text-[#2C3E50] mb-1">Phone</h3>
-                  <p className="text-gray-600">+1 (555) 123-4567</p>
+                  <p className="text-gray-600">+1 (672) 514-4006</p>
                 </div>
               </div>
               
@@ -81,7 +81,7 @@ const Contact = () => {
                 <MapPin className="text-[#00BFFF] mt-1 mr-4" size={24} />
                 <div>
                   <h3 className="font-semibold text-[#2C3E50] mb-1">Location</h3>
-                  <p className="text-gray-600">San Francisco, CA</p>
+                  <p className="text-gray-600">Greater Victoria, BC, Canada</p>
                 </div>
               </div>
             </div>
@@ -91,7 +91,7 @@ const Contact = () => {
               <h3 className="font-semibold text-[#2C3E50] mb-4">Follow Me</h3>
               <div className="flex space-x-4">
                 <a
-                  href="https://linkedin.com/in/yourprofile"
+                  href="https://www.linkedin.com/in/parsa-sojoudi"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-[#0077B5] p-3 rounded-full text-white hover:bg-[#005885] transition-colors"
@@ -99,20 +99,12 @@ const Contact = () => {
                   <Linkedin size={20} />
                 </a>
                 <a
-                  href="https://twitter.com/yourhandle"
+                  href="https://x.com/Parsasojoudi"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-[#1DA1F2] p-3 rounded-full text-white hover:bg-[#1a91da] transition-colors"
                 >
                   <Twitter size={20} />
-                </a>
-                <a
-                  href="https://facebook.com/yourprofile"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-[#1877F2] p-3 rounded-full text-white hover:bg-[#166fe5] transition-colors"
-                >
-                  <Facebook size={20} />
                 </a>
               </div>
             </div>

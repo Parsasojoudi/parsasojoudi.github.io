@@ -24,8 +24,8 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           <div className="animate-fade-in">
             <img
-              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              alt="Professional photo"
+              src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Legal books and gavel representing law and justice"
               className="rounded-lg shadow-xl w-full"
             />
           </div>

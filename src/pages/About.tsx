@@ -1,4 +1,3 @@
-
 import { Code, Scale, Briefcase, Award } from "lucide-react";
 
 const About = () => {
@@ -17,7 +16,7 @@ const About = () => {
             About Me
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            A unique blend of legal expertise, engineering innovation, and entrepreneurial vision
+            Bridging innovation and law: from engineering to intellectual property and beyond
           </p>
         </div>
 
@@ -36,21 +35,16 @@ const About = () => {
             </h2>
             <div className="space-y-4 text-gray-700 leading-relaxed">
               <p>
-                With a unique background spanning law, engineering, and entrepreneurship, I bring a multidisciplinary 
-                perspective to solving complex challenges in today's tech-driven world.
+                With a foundation in engineering and hands-on experience in research, development, and startups, I'm now stepping into the legal world as an incoming JD student at the University of Victoria (Class of 2028). My passion lies at the intersection of innovation and the law, particularly in patent, intellectual property, and technology law.
               </p>
               <p>
-                My legal expertise, combined with deep technical knowledge, allows me to navigate the intersection 
-                of innovation and regulation, helping organizations build compliant yet cutting-edge solutions.
+                Over the years, I've worked closely on projects involving patents and product development, which inspired me to pursue law and support inventors, creators, and tech-driven businesses in protecting their ideas and navigating complex regulatory landscapes.
               </p>
               <p>
-                Throughout my career, I've been passionate about bridging the gap between technical possibility 
-                and legal feasibility, whether advising startups on IP strategy, leading engineering teams, 
-                or developing innovative legal-tech solutions.
+                While I'm just beginning my formal legal education, my technical background gives me a unique lens through which I approach legal challenges. I aim to become a professional who can fluently connect the legal, technical, and business aspects of innovation.
               </p>
               <p>
-                I believe that the future belongs to professionals who can speak multiple "languages" – 
-                legal, technical, and business – and I'm committed to being at the forefront of this evolution.
+                I believe the future of law lies in cross-disciplinary thinking, and I'm excited to grow at that intersection.
               </p>
             </div>
           </div>

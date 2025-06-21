@@ -18,8 +18,7 @@ const Index = () => {
                 JD Candidate at UVic Law, Class of 2028
               </p>
               <p className="text-lg mb-8 text-gray-400 leading-relaxed">
-                Combining scientific expertise with legal studies. Currently pursuing a Juris Doctor at the University of Victoria, 
-                with extensive research experience in chemistry and a passion for intellectual property and technology law.
+                Combining a strong background in research and development with legal studies. Currently pursuing a Juris Doctor at the University of Victoria, with a passion for intellectual property, technology law, and innovation-driven legal solutions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/about">

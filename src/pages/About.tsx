@@ -1,10 +1,19 @@
+
 import { Code, Scale, Briefcase, Award } from "lucide-react";
 
 const About = () => {
   const skills = [
-    { category: "Legal Expertise", items: ["Contract Law", "Intellectual Property", "Corporate Law", "Regulatory Compliance"] },
-    { category: "Technical Skills", items: ["Software Development", "Data Analysis", "Project Management", "Product Strategy"] },
-    { category: "Leadership", items: ["Team Management", "Strategic Planning", "Business Development", "Cross-functional Collaboration"] },
+    { category: "Legal Foundations", items: ["Technology & Innovation Law", "Regulatory Insight (Biotech/Mining)", "Contract and Compliance Awareness", "Legal Research & Analysis"] },
+    { category: "Industry Experience", items: ["Laboratory & Field Operations", "R&D Project Coordination", "Technical Reporting", "Data Interpretation in Scientific Settings"] },
+    { category: "Leadership & Collaboration", items: ["Team Coordination", "Cross-Disciplinary Communication", "Problem Solving in Technical Contexts", "Strategic Planning & Decision Support"] },
+  ];
+
+  const legalInterests = [
+    "Technology Law",
+    "Intellectual Property Law", 
+    "Patent Law",
+    "Entrepreneurship Law",
+    "Merger and Acquisition Law"
   ];
 
   return (
@@ -50,42 +59,20 @@ const About = () => {
           </div>
         </div>
 
-        {/* Expertise Areas */}
+        {/* Legal Interests */}
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-[#2C3E50] text-center mb-12">
-            Areas of Expertise
+            Legal Interests
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center animate-fade-in">
-              <div className="bg-[#00BFFF] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Scale className="text-white" size={32} />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {legalInterests.map((interest, index) => (
+              <div key={index} className="text-center animate-fade-in">
+                <div className="bg-[#00BFFF] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Scale className="text-white" size={32} />
+                </div>
+                <h3 className="text-lg font-semibold text-[#2C3E50]">{interest}</h3>
               </div>
-              <h3 className="text-xl font-semibold text-[#2C3E50] mb-4">Legal Practice</h3>
-              <p className="text-gray-600">
-                Comprehensive legal expertise with focus on technology law, intellectual property, 
-                and regulatory compliance in innovative industries.
-              </p>
-            </div>
-            <div className="text-center animate-fade-in">
-              <div className="bg-[#1ABC9C] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Code className="text-white" size={32} />
-              </div>
-              <h3 className="text-xl font-semibold text-[#2C3E50] mb-4">Engineering & Tech</h3>
-              <p className="text-gray-600">
-                Strong technical background in software development, systems architecture, 
-                and emerging technologies with practical implementation experience.
-              </p>
-            </div>
-            <div className="text-center animate-fade-in">
-              <div className="bg-[#E74C3C] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Briefcase className="text-white" size={32} />
-              </div>
-              <h3 className="text-xl font-semibold text-[#2C3E50] mb-4">Entrepreneurship</h3>
-              <p className="text-gray-600">
-                Proven track record in startup environments, business development, 
-                and bringing innovative legal-tech solutions from concept to market.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
 

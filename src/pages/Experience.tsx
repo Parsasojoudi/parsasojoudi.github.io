@@ -96,7 +96,7 @@ const Experience = () => {
             Professional Experience
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            A comprehensive overview of my career journey from chemistry research to legal studies
+            A comprehensive overview of my education and career journey
           </p>
         </div>
 

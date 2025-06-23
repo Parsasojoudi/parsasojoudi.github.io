@@ -1,4 +1,3 @@
-
 import { Award, Trophy, FileText, Star, Lightbulb, Target } from "lucide-react";
 
 const Achievements = () => {
@@ -8,6 +7,12 @@ const Achievements = () => {
       organization: "Simon Fraser University",
       year: "2021-2023",
       description: "Recipient of a total of CAD 52,000 for an MSc in Chemistry"
+    },
+    {
+      title: "Full Undergraduate Scholarship",
+      organization: "University of Tehran",
+      year: "2016-2020",
+      description: "Full scholarship for undergraduate studies in Polymer Engineering"
     },
     {
       title: "Travel and Research Award",
@@ -20,12 +25,6 @@ const Achievements = () => {
       organization: "Simon Fraser University", 
       year: "2021",
       description: "Recipient of a total of CAD 4000 for academic excellence"
-    },
-    {
-      title: "Youth Chess Champion",
-      organization: "District 8, Province of Tehran",
-      year: "2007",
-      description: "Youth Chess Champion in the District 8, Province of Tehran"
     }
   ];
 
@@ -230,7 +229,7 @@ const Achievements = () => {
         {/* Conferences */}
         <div className="mb-16">
           <div className="flex items-center mb-8">
-            <Lightbulb className="text-[#E74C3C] mr-3" size={32} />
+            <Lightbulb className="text-[#9B59B6] mr-3" size={32} />
             <h2 className="text-3xl font-bold text-[#2C3E50]">Conference Presentations</h2>
           </div>
           
@@ -238,13 +237,13 @@ const Achievements = () => {
             {conferences.map((conference, index) => (
               <div key={index} className="bg-white rounded-lg shadow-lg p-8 animate-fade-in hover:shadow-xl transition-shadow">
                 <div className="flex items-start justify-between mb-4">
-                  <span className="text-xs px-3 py-1 rounded-full bg-red-100 text-red-800">
+                  <span className="text-xs px-3 py-1 rounded-full bg-purple-100 text-purple-800">
                     {conference.type}
                   </span>
                   <span className="text-sm text-gray-500">{conference.year}</span>
                 </div>
                 <h3 className="text-lg font-semibold text-[#2C3E50] mb-3">{conference.title}</h3>
-                <p className="text-[#E74C3C] font-medium mb-1">{conference.event}</p>
+                <p className="text-[#9B59B6] font-medium mb-1">{conference.event}</p>
                 <p className="text-gray-600">{conference.location}</p>
               </div>
             ))}

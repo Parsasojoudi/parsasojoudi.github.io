@@ -93,21 +93,25 @@ const Resume = () => {
             </p>
           </div>
 
-          {/* Core Competencies */}
+          {/* Legal Interests */}
           <div className="mb-8">
             <h3 className="text-xl font-bold text-[#2C3E50] mb-4 border-l-4 border-[#00BFFF] pl-3">
-              Core Competencies
+              Legal Interests
             </h3>
-            <div className="grid md:grid-cols-1 gap-4 justify-center">
-              <div className="text-center">
-                <h4 className="font-semibold text-[#2C3E50] mb-2">Legal Interests</h4>
-                <ul className="text-sm text-gray-700 space-y-1">
-                  <li>• Intellectual Property Law</li>
-                  <li>• Patent Law</li>
-                  <li>• Business Law</li>
-                </ul>
-              </div>
-            </div>
+            <ul className="text-gray-700 space-y-2">
+              <li className="flex items-start">
+                <span className="text-[#00BFFF] mr-2">•</span>
+                Intellectual Property Law
+              </li>
+              <li className="flex items-start">
+                <span className="text-[#00BFFF] mr-2">•</span>
+                Patent Law
+              </li>
+              <li className="flex items-start">
+                <span className="text-[#00BFFF] mr-2">•</span>
+                Business Law
+              </li>
+            </ul>
           </div>
 
           {/* Key Achievements */}
@@ -122,7 +126,7 @@ const Resume = () => {
               </li>
               <li className="flex items-start">
                 <span className="text-[#00BFFF] mr-2">•</span>
-                Published 3 peer-reviewed research papers in analytical chemistry and biomedical applications
+                Published 3 peer-reviewed research papers in analytical chemistry and biomedical applications with currently more than 70 citations
               </li>
               <li className="flex items-start">
                 <span className="text-[#00BFFF] mr-2">•</span>

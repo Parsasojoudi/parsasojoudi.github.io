@@ -28,27 +28,6 @@ const Experience = () => {
       ]
     },
     {
-      title: "Tutor",
-      company: "Teachers' Tutoring Service",
-      location: "Vancouver, BC, Canada",
-      dates: "Feb. 2024 - Present",
-      duties: [
-        "Provided tutoring in Mathematics and Chemistry for all high school grades",
-        "Specialized in tutoring AP Chemistry and AP Calculus",
-        "Experienced in working with students with learning disabilities, including Autism"
-      ]
-    },
-    {
-      title: "Math and Chemistry Tutor",
-      company: "Aspire Learning Academy",
-      location: "West Vancouver, BC, Canada",
-      dates: "Aug. 2021 - Dec. 2023",
-      duties: [
-        "Tutoring Math and Chess to all high school grades",
-        "Teacher of Advanced Math and Chemistry"
-      ]
-    },
-    {
       title: "Research Assistant",
       company: "Department of Chemistry, Simon Fraser University",
       location: "Burnaby, BC, Canada",
@@ -77,26 +56,6 @@ const Experience = () => {
       duties: [
         "Investigation of synthesis magnetic gold-coated poly (ε-caprolactonediol) for controlled release of paclitaxel and 5-FU under the supervision of Dr. Irani.",
         "Co-authored and collaborated in an academic publication on the synthesis of magnetic gold-coated poly (ε-caprolactonediol)"
-      ]
-    },
-    {
-      title: "Sales Associate",
-      company: "Mango",
-      location: "Tehran, Iran",
-      dates: "Jun. 2017 - Oct. 2017",
-      duties: [
-        "Sales Associate",
-        "Assisted customers, managed inventory, processed transactions, and maintained store organization."
-      ]
-    },
-    {
-      title: "Math and Chemistry Teacher",
-      company: "Salam 4 High School",
-      location: "Tehran, Iran",
-      dates: "Sep. 2016 - Sep. 2020",
-      duties: [
-        "Tutoring Math and Chemistry to all high school grades",
-        "Teacher of Advanced Math and Chemistry in a class of 30 students"
       ]
     }
   ];
@@ -141,8 +100,43 @@ const Experience = () => {
           </p>
         </div>
 
-        {/* Work Experience Section */}
+        {/* Education Section - Now First */}
         <div className="mb-16">
+          <div className="flex items-center mb-8">
+            <GraduationCap className="text-[#1ABC9C] mr-3" size={32} />
+            <h2 className="text-3xl font-bold text-[#2C3E50]">Education</h2>
+          </div>
+          
+          <div className="space-y-8">
+            {education.map((edu, index) => (
+              <div key={index} className="bg-white rounded-lg shadow-lg p-8 animate-fade-in hover:shadow-xl transition-shadow">
+                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
+                  <div>
+                    <h3 className="text-xl font-semibold text-[#2C3E50] mb-2">{edu.degree}</h3>
+                    <p className="text-lg text-[#1ABC9C] font-medium mb-2">{edu.institution}</p>
+                    <p className="text-gray-700 mb-2">{edu.details}</p>
+                  </div>
+                  <div className="flex flex-col lg:items-end text-gray-600">
+                    <div className="flex items-center mb-1">
+                      <Calendar className="mr-2" size={16} />
+                      <span>{edu.dates}</span>
+                    </div>
+                    <div className="flex items-center">
+                      <MapPin className="mr-2" size={16} />
+                      <span>{edu.location}</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-[#FAFAFA] p-4 rounded-lg">
+                  <p className="text-[#2C3E50] font-medium">{edu.honors}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Work Experience Section - Now Second */}
+        <div>
           <div className="flex items-center mb-8">
             <Building className="text-[#00BFFF] mr-3" size={32} />
             <h2 className="text-3xl font-bold text-[#2C3E50]">Work Experience</h2>
@@ -175,41 +169,6 @@ const Experience = () => {
                     </li>
                   ))}
                 </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Education Section */}
-        <div>
-          <div className="flex items-center mb-8">
-            <GraduationCap className="text-[#1ABC9C] mr-3" size={32} />
-            <h2 className="text-3xl font-bold text-[#2C3E50]">Education</h2>
-          </div>
-          
-          <div className="space-y-8">
-            {education.map((edu, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-lg p-8 animate-fade-in hover:shadow-xl transition-shadow">
-                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
-                  <div>
-                    <h3 className="text-xl font-semibold text-[#2C3E50] mb-2">{edu.degree}</h3>
-                    <p className="text-lg text-[#1ABC9C] font-medium mb-2">{edu.institution}</p>
-                    <p className="text-gray-700 mb-2">{edu.details}</p>
-                  </div>
-                  <div className="flex flex-col lg:items-end text-gray-600">
-                    <div className="flex items-center mb-1">
-                      <Calendar className="mr-2" size={16} />
-                      <span>{edu.dates}</span>
-                    </div>
-                    <div className="flex items-center">
-                      <MapPin className="mr-2" size={16} />
-                      <span>{edu.location}</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="bg-[#FAFAFA] p-4 rounded-lg">
-                  <p className="text-[#2C3E50] font-medium">{edu.honors}</p>
-                </div>
               </div>
             ))}
           </div>

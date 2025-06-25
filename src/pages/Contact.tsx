@@ -109,16 +109,6 @@ const Contact = () => {
                   </a>
                 </div>
               </div>
-
-              {/* Professional Note */}
-              <div className="p-6 bg-black/20 rounded-lg">
-                <h3 className="font-semibold mb-2">Professional Inquiries Welcome</h3>
-                <p className="text-gray-300">
-                  Transitioning from research and development to law school, I'm interested in 
-                  discussing legal opportunities, my work experience, and current interests in 
-                  intellectual property and patent law.
-                </p>
-              </div>
             </div>
           </div>
 

@@ -77,7 +77,7 @@ const Index = () => {
                   Research & Publications
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  Explore my research publications, academic achievements, and contributions to analytical chemistry and nucleic acid research.
+                  Explore my research publications, academic achievements, and contributions to academic work.
                 </p>
                 <span className="text-[#1ABC9C] font-medium group-hover:underline">
                   View Achievements →
@@ -91,7 +91,7 @@ const Index = () => {
                   Resume & CV
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  Download my complete curriculum vitae with detailed information about my academic background and research experience.
+                  Download my complete curriculum vitae with detailed information about my academic background and work experience.
                 </p>
                 <span className="text-[#E74C3C] font-medium group-hover:underline">
                   <Download className="inline mr-1" size={16} />

@@ -29,7 +29,7 @@ const Index = () => {
                   </Button>
                 </Link>
                 <Link to="/contact">
-                  <Button variant="outline" className="border-white text-white hover:bg-white hover:text-[#2C3E50] px-6 py-3 rounded-lg transition-all">
+                  <Button variant="outline" className="border-[#2C3E50] text-[#2C3E50] hover:bg-[#2C3E50] hover:text-white px-6 py-3 rounded-lg transition-all">
                     <Mail className="mr-2" size={20} />
                     Get In Touch
                   </Button>

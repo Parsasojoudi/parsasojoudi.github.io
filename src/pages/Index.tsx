@@ -1,3 +1,4 @@
+
 import { ArrowRight, Download, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -62,7 +63,7 @@ const Index = () => {
                   Academic & Professional Experience
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  Discover my journey from chemistry research to law school, including my work in analytical chemistry and teaching experience.
+                  Discover my journey from research and development to law school, including my work experience and current interests in legal studies.
                 </p>
                 <span className="text-[#00BFFF] font-medium group-hover:underline">
                   View Experience →

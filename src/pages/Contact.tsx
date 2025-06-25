@@ -58,65 +58,67 @@ const Contact = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div className="animate-fade-in">
-            <h2 className="text-3xl font-bold text-[#2C3E50] mb-8">Let's Connect</h2>
-            
-            <div className="space-y-6 mb-8">
-              <div className="flex items-start">
-                <Mail className="text-[#00BFFF] mt-1 mr-4" size={24} />
-                <div>
-                  <h3 className="font-semibold text-[#2C3E50] mb-1">Email</h3>
-                  <p className="text-gray-600">sojoudiparsa@gmail.com</p>
-                </div>
-              </div>
+            <div className="bg-gradient-to-r from-[#2C3E50] to-[#34495e] rounded-lg p-8 text-white">
+              <h2 className="text-3xl font-bold mb-8">Let's Connect</h2>
               
-              <div className="flex items-start">
-                <Phone className="text-[#00BFFF] mt-1 mr-4" size={24} />
-                <div>
-                  <h3 className="font-semibold text-[#2C3E50] mb-1">Phone</h3>
-                  <p className="text-gray-600">+1 (672) 514-4006</p>
+              <div className="space-y-6 mb-8">
+                <div className="flex items-start">
+                  <Mail className="text-[#00BFFF] mt-1 mr-4" size={24} />
+                  <div>
+                    <h3 className="font-semibold mb-1">Email</h3>
+                    <p className="text-gray-300">sojoudiparsa@gmail.com</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <Phone className="text-[#00BFFF] mt-1 mr-4" size={24} />
+                  <div>
+                    <h3 className="font-semibold mb-1">Phone</h3>
+                    <p className="text-gray-300">+1 (672) 514-4006</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <MapPin className="text-[#00BFFF] mt-1 mr-4" size={24} />
+                  <div>
+                    <h3 className="font-semibold mb-1">Location</h3>
+                    <p className="text-gray-300">Greater Victoria, BC, Canada</p>
+                  </div>
                 </div>
               </div>
-              
-              <div className="flex items-start">
-                <MapPin className="text-[#00BFFF] mt-1 mr-4" size={24} />
-                <div>
-                  <h3 className="font-semibold text-[#2C3E50] mb-1">Location</h3>
-                  <p className="text-gray-600">Greater Victoria, BC, Canada</p>
+
+              {/* Social Links */}
+              <div className="mb-8">
+                <h3 className="font-semibold mb-4">Follow Me</h3>
+                <div className="flex space-x-4">
+                  <a
+                    href="https://www.linkedin.com/in/parsa-sojoudi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#0077B5] p-3 rounded-full text-white hover:bg-[#005885] transition-colors"
+                  >
+                    <Linkedin size={20} />
+                  </a>
+                  <a
+                    href="https://x.com/Parsasojoudi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#1DA1F2] p-3 rounded-full text-white hover:bg-[#1a91da] transition-colors"
+                  >
+                    <X size={20} />
+                  </a>
                 </div>
               </div>
-            </div>
 
-            {/* Social Links */}
-            <div>
-              <h3 className="font-semibold text-[#2C3E50] mb-4">Follow Me</h3>
-              <div className="flex space-x-4">
-                <a
-                  href="https://www.linkedin.com/in/parsa-sojoudi"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-[#0077B5] p-3 rounded-full text-white hover:bg-[#005885] transition-colors"
-                >
-                  <Linkedin size={20} />
-                </a>
-                <a
-                  href="https://x.com/Parsasojoudi"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-[#1DA1F2] p-3 rounded-full text-white hover:bg-[#1a91da] transition-colors"
-                >
-                  <X size={20} />
-                </a>
+              {/* Professional Note */}
+              <div className="p-6 bg-black/20 rounded-lg">
+                <h3 className="font-semibold mb-2">Professional Inquiries Welcome</h3>
+                <p className="text-gray-300">
+                  Transitioning from research and development to law school, I'm interested in 
+                  discussing legal opportunities, my work experience, and current interests in 
+                  intellectual property and patent law.
+                </p>
               </div>
-            </div>
-
-            {/* Professional Note */}
-            <div className="mt-8 p-6 bg-gradient-to-r from-[#2C3E50] to-[#34495e] rounded-lg text-white">
-              <h3 className="font-semibold mb-2">Professional Inquiries Welcome</h3>
-              <p className="text-gray-300">
-                I'm always interested in discussing legal-tech opportunities, 
-                collaboration on innovative projects, or sharing insights about 
-                the intersection of law and technology.
-              </p>
             </div>
           </div>
 

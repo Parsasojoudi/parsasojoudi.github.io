@@ -1,3 +1,4 @@
+
 import { ArrowRight, Download, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -56,7 +57,7 @@ const Index = () => {
             Explore My Background
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <Link to="/experience" className="group">
+            <Link to="/experience#education" className="group">
               <div className="bg-[#FAFAFA] p-8 rounded-lg shadow-md hover:shadow-xl transition-all hover:scale-105 border-l-4 border-[#00BFFF]">
                 <h3 className="text-xl font-semibold mb-4 text-[#2C3E50] group-hover:text-[#00BFFF] transition-colors">
                   Academic & Professional Experience
@@ -73,10 +74,10 @@ const Index = () => {
             <Link to="/achievements#publications" className="group">
               <div className="bg-[#FAFAFA] p-8 rounded-lg shadow-md hover:shadow-xl transition-all hover:scale-105 border-l-4 border-[#1ABC9C]">
                 <h3 className="text-xl font-semibold mb-4 text-[#2C3E50] group-hover:text-[#1ABC9C] transition-colors">
-                  Research & Publications
+                  Academic Achievements & Contributions
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  Explore my research publications, academic achievements and contributions.
+                  Explore my academic achievements and contributions.
                 </p>
                 <span className="text-[#1ABC9C] font-medium group-hover:underline">
                   View Achievements →

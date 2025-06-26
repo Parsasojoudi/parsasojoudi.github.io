@@ -1,7 +1,20 @@
 
 import { Calendar, MapPin, Building, GraduationCap } from "lucide-react";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const Experience = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === '#education') {
+      const educationSection = document.getElementById('education');
+      if (educationSection) {
+        educationSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
+
   const workExperience = [
     {
       title: "Full-time Research and Development Engineer",
@@ -101,7 +114,7 @@ const Experience = () => {
         </div>
 
         {/* Education Section - Now First */}
-        <div className="mb-16">
+        <div className="mb-16" id="education">
           <div className="flex items-center mb-8">
             <GraduationCap className="text-[#1ABC9C] mr-3" size={32} />
             <h2 className="text-3xl font-bold text-[#2C3E50]">Education</h2>

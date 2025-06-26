@@ -1,6 +1,19 @@
 import { Award, Trophy, FileText, Star, Lightbulb, Target } from "lucide-react";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const Achievements = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === '#publications') {
+      const publicationsSection = document.getElementById('publications');
+      if (publicationsSection) {
+        publicationsSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
+
   const awards = [
     {
       title: "Full Graduate Scholarship",
@@ -201,7 +214,7 @@ const Achievements = () => {
         </div>
 
         {/* Publications */}
-        <div className="mb-16">
+        <div className="mb-16" id="publications">
           <div className="flex items-center mb-8">
             <FileText className="text-[#00BFFF] mr-3" size={32} />
             <h2 className="text-3xl font-bold text-[#2C3E50]">Publications</h2>

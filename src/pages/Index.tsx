@@ -1,4 +1,3 @@
-
 import { ArrowRight, Download, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -71,7 +70,7 @@ const Index = () => {
               </div>
             </Link>
 
-            <Link to="/achievements" className="group">
+            <Link to="/achievements#publications" className="group">
               <div className="bg-[#FAFAFA] p-8 rounded-lg shadow-md hover:shadow-xl transition-all hover:scale-105 border-l-4 border-[#1ABC9C]">
                 <h3 className="text-xl font-semibold mb-4 text-[#2C3E50] group-hover:text-[#1ABC9C] transition-colors">
                   Research & Publications

@@ -77,7 +77,7 @@ const Index = () => {
                   Research & Publications
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  Explore my research publications, academic achievements, and contributions to academic work.
+                  Explore my research publications, academic achievements and contributions.
                 </p>
                 <span className="text-[#1ABC9C] font-medium group-hover:underline">
                   View Achievements →

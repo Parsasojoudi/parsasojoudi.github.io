@@ -75,8 +75,6 @@ const Resume = () => {
             <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-600">
               <span>sojoudiparsa@gmail.com</span>
               <span>•</span>
-              <span>+1 672 514 4006</span>
-              <span>•</span>
               <span>Greater Victoria, BC, Canada</span>
             </div>
           </div>

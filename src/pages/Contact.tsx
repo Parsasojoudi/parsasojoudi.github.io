@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send, Linkedin, X } from "lucide-react";
+import { Mail, MapPin, Send, Linkedin, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -67,14 +67,6 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold mb-1">Email</h3>
                     <p className="text-gray-300">sojoudiparsa@gmail.com</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <Phone className="text-[#00BFFF] mt-1 mr-4" size={24} />
-                  <div>
-                    <h3 className="font-semibold mb-1">Phone</h3>
-                    <p className="text-gray-300">+1 (672) 514-4006</p>
                   </div>
                 </div>
                 

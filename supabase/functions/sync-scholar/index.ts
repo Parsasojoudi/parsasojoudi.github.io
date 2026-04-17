@@ -27,27 +27,51 @@ function parsePublications(html: string): Publication[] {
   const rows = html.match(rowRegex) ?? [];
 
   for (const row of rows) {
+    // Skip empty skeleton rows (no title link)
+    if (!row.includes("gsc_a_at")) continue;
+
     // Title + link inside <a class="gsc_a_at" href="...">TITLE</a>
     const titleMatch = row.match(
       /<a[^>]*class="gsc_a_at"[^>]*href="([^"]*)"[^>]*>([\s\S]*?)<\/a>/
     );
     if (!titleMatch) continue;
-    const href = titleMatch[1];
+    const href = titleMatch[1].replace(/&amp;/g, "&");
     const title = stripHtml(titleMatch[2]).trim();
     if (!title) continue;
 
-    // Two <div class="gs_gray"> nodes follow: authors, then venue+year
+    // Two <div class="gs_gray"> nodes follow: authors, then venue (with year span inside)
     const grayMatches = [
       ...row.matchAll(/<div[^>]*class="gs_gray"[^>]*>([\s\S]*?)<\/div>/g),
     ];
     const authors = grayMatches[0] ? stripHtml(grayMatches[0][1]).trim() : "";
-    const venueRaw = grayMatches[1] ? stripHtml(grayMatches[1][1]).trim() : "";
+    const venueRawHtml = grayMatches[1] ? grayMatches[1][1] : "";
 
-    // Year is in <span class="gsc_a_h ...">YEAR</span>
-    const yearMatch = row.match(
-      /<span[^>]*class="gsc_a_h[^"]*"[^>]*>([\s\S]*?)<\/span>/
+    // Year is inside <span class="gs_oph">, 2020</span> within the venue div,
+    // OR in the right-hand <span class="gsc_a_h ...">2020</span>.
+    let year = "";
+    const ophMatch = venueRawHtml.match(
+      /<span[^>]*class="gs_oph"[^>]*>([\s\S]*?)<\/span>/
     );
-    const year = yearMatch ? stripHtml(yearMatch[1]).trim() : "";
+    if (ophMatch) {
+      const m = stripHtml(ophMatch[1]).match(/(\d{4})/);
+      if (m) year = m[1];
+    }
+    if (!year) {
+      const yearMatch = row.match(
+        /<span[^>]*class="gsc_a_h[^"]*"[^>]*>([\s\S]*?)<\/span>/
+      );
+      if (yearMatch) {
+        const y = stripHtml(yearMatch[1]).trim();
+        if (/^\d{4}$/.test(y)) year = y;
+      }
+    }
+
+    // Strip the gs_oph span out of venue, then strip HTML.
+    const venue = stripHtml(
+      venueRawHtml.replace(/<span[^>]*class="gs_oph"[^>]*>[\s\S]*?<\/span>/g, "")
+    )
+      .replace(/[,\s]+$/, "")
+      .trim();
 
     // Citations in <a class="gsc_a_ac ...">N</a>
     const citeMatch = row.match(
@@ -56,9 +80,6 @@ function parsePublications(html: string): Publication[] {
     const citations = citeMatch
       ? parseInt(stripHtml(citeMatch[1]).trim(), 10) || 0
       : 0;
-
-    // Strip trailing year from venue if present (e.g. "Analytical Letters, 2024")
-    const venue = venueRaw.replace(/,\s*\d{4}\s*$/, "").trim();
 
     const scholar_url = href.startsWith("http")
       ? href

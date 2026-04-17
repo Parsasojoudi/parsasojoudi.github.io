@@ -92,7 +92,8 @@ async function scrapeWithFirecrawl(apiKey: string): Promise<string> {
       url: SCHOLAR_URL,
       formats: ["rawHtml"],
       onlyMainContent: false,
-      waitFor: 1500,
+      waitFor: 4000,
+      actions: [{ type: "wait", milliseconds: 3000 }],
     }),
   });
   const data = await res.json();
@@ -101,8 +102,8 @@ async function scrapeWithFirecrawl(apiKey: string): Promise<string> {
       `Firecrawl failed [${res.status}]: ${JSON.stringify(data).slice(0, 500)}`
     );
   }
-  // v2 SDK returns { success, data: { rawHtml, html, ... } }
-  const html = data?.data?.rawHtml || data?.data?.html || data?.rawHtml || data?.html;
+  const html =
+    data?.data?.rawHtml || data?.data?.html || data?.rawHtml || data?.html;
   if (!html) {
     throw new Error(
       `No HTML returned from Firecrawl: ${JSON.stringify(data).slice(0, 500)}`

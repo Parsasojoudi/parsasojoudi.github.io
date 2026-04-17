@@ -14,7 +14,72 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      publications: {
+        Row: {
+          authors: string | null
+          citations: number | null
+          created_at: string
+          id: string
+          last_synced_at: string
+          position: number
+          scholar_url: string | null
+          title: string
+          updated_at: string
+          venue: string | null
+          year: string | null
+        }
+        Insert: {
+          authors?: string | null
+          citations?: number | null
+          created_at?: string
+          id?: string
+          last_synced_at?: string
+          position?: number
+          scholar_url?: string | null
+          title: string
+          updated_at?: string
+          venue?: string | null
+          year?: string | null
+        }
+        Update: {
+          authors?: string | null
+          citations?: number | null
+          created_at?: string
+          id?: string
+          last_synced_at?: string
+          position?: number
+          scholar_url?: string | null
+          title?: string
+          updated_at?: string
+          venue?: string | null
+          year?: string | null
+        }
+        Relationships: []
+      }
+      publications_sync_meta: {
+        Row: {
+          id: number
+          last_error: string | null
+          last_status: string | null
+          last_synced_at: string | null
+          updated_at: string
+        }
+        Insert: {
+          id?: number
+          last_error?: string | null
+          last_status?: string | null
+          last_synced_at?: string | null
+          updated_at?: string
+        }
+        Update: {
+          id?: number
+          last_error?: string | null
+          last_status?: string | null
+          last_synced_at?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

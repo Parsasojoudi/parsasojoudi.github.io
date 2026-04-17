@@ -1,9 +1,22 @@
-import { Award, Trophy, FileText, Star, Lightbulb, Target } from "lucide-react";
-import { useEffect } from "react";
+import { Award, Trophy, FileText, Star, Lightbulb, Target, Loader2 } from "lucide-react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
+
+type Publication = {
+  id: string;
+  title: string;
+  authors: string | null;
+  venue: string | null;
+  year: string | null;
+  scholar_url: string | null;
+  position: number;
+};
 
 const Achievements = () => {
   const location = useLocation();
+  const [publications, setPublications] = useState<Publication[]>([]);
+  const [pubsLoading, setPubsLoading] = useState(true);
 
   useEffect(() => {
     if (location.hash === '#publications') {
@@ -13,6 +26,38 @@ const Achievements = () => {
       }
     }
   }, [location]);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    const loadPublications = async () => {
+      // Fire-and-forget: trigger sync (the function itself decides if it's stale).
+      supabase.functions.invoke("sync-scholar", { body: {} }).then(async (res) => {
+        // If the sync actually wrote new rows, refresh the list.
+        const synced = (res.data as { synced?: boolean } | null)?.synced;
+        if (synced && !cancelled) {
+          const { data } = await supabase
+            .from("publications")
+            .select("*")
+            .order("position", { ascending: true });
+          if (!cancelled && data) setPublications(data as Publication[]);
+        }
+      }).catch(() => { /* non-fatal */ });
+
+      // Initial load from DB
+      const { data } = await supabase
+        .from("publications")
+        .select("*")
+        .order("position", { ascending: true });
+      if (!cancelled) {
+        setPublications((data ?? []) as Publication[]);
+        setPubsLoading(false);
+      }
+    };
+
+    loadPublications();
+    return () => { cancelled = true; };
+  }, []);
 
   const awards = [
     {
@@ -65,29 +110,6 @@ const Achievements = () => {
     }
   ];
 
-  const publications = [
-    {
-      title: "Development of a Spot Test (ST) based on the Nucleic Acid Amplification Test (NAAT) for Ginseng Species Authentication",
-      authors: "P. Sojoudi, C. Oberc, Al-H. Tiffere, P. Li",
-      journal: "Analytical Letters",
-      year: "October 2024",
-      description: "Published research on novel authentication method for ginseng species"
-    },
-    {
-      title: "Nucleic Acid Amplification Test (NAAT) Conducted in a Microfluidic Chip to Differentiate Between Various Ginseng Types",
-      authors: "C. Oberc, P. Sojoudi, P. Li",
-      journal: "The Analyst",
-      year: "December 2022",
-      description: "Co-authored research on microfluidic applications for species differentiation"
-    },
-    {
-      title: "Synthesis of magnetic gold coated poly (ε-caprolactonediol) based polyurethane/poly(N-isopropylacrylamide)-grafted-chitosan core-shell nanofibers for controlled release of paclitaxel and 5-FU",
-      authors: "A. Farboudi, A. Nour, S. Shirinzad, P. Sojoudi, S. Davaran, M. Akrami, M. Irani",
-      journal: "International Journal of Biological Macromolecules",
-      year: "November 2019",
-      description: "Research on controlled drug release systems using magnetic nanofibers"
-    }
-  ];
 
   const conferences = [
     {
@@ -218,25 +240,55 @@ const Achievements = () => {
           <div className="flex items-center mb-8">
             <FileText className="text-[#00BFFF] mr-3" size={32} />
             <h2 className="text-3xl font-bold text-[#2C3E50]">Publications</h2>
+            <span className="ml-3 text-xs text-gray-500">Auto-synced from Google Scholar</span>
           </div>
-          
-          <div className="space-y-6">
-            {publications.map((publication, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-lg p-8 animate-fade-in hover:shadow-xl transition-shadow">
-                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-[#2C3E50] mb-2">{publication.title}</h3>
-                    <p className="text-[#00BFFF] font-medium mb-2">{publication.journal}</p>
-                    <p className="text-gray-600 mb-2 text-sm">{publication.authors}</p>
-                    <p className="text-gray-700">{publication.description}</p>
+
+          {pubsLoading ? (
+            <div className="flex items-center justify-center py-12 text-gray-500">
+              <Loader2 className="animate-spin mr-2" size={20} />
+              Loading publications…
+            </div>
+          ) : publications.length === 0 ? (
+            <div className="bg-white rounded-lg shadow p-8 text-center text-gray-600">
+              Publications will appear here once synced from Google Scholar.
+            </div>
+          ) : (
+            <div className="space-y-6">
+              {publications.map((publication) => (
+                <div key={publication.id} className="bg-white rounded-lg shadow-lg p-8 animate-fade-in hover:shadow-xl transition-shadow">
+                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
+                    <div className="flex-1">
+                      <h3 className="text-lg font-semibold text-[#2C3E50] mb-2">
+                        {publication.scholar_url ? (
+                          <a
+                            href={publication.scholar_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-[#00BFFF] transition-colors"
+                          >
+                            {publication.title}
+                          </a>
+                        ) : (
+                          publication.title
+                        )}
+                      </h3>
+                      {publication.venue && (
+                        <p className="text-[#00BFFF] font-medium mb-2">{publication.venue}</p>
+                      )}
+                      {publication.authors && (
+                        <p className="text-gray-600 mb-2 text-sm">{publication.authors}</p>
+                      )}
+                    </div>
+                    {publication.year && (
+                      <span className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full mt-2 lg:mt-0">
+                        {publication.year}
+                      </span>
+                    )}
                   </div>
-                  <span className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full mt-2 lg:mt-0">
-                    {publication.year}
-                  </span>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Conferences */}

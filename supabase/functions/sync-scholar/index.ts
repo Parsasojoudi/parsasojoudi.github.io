@@ -184,10 +184,17 @@ Deno.serve(async (req) => {
 
   try {
     const html = await scrapeWithFirecrawl(FIRECRAWL_API_KEY);
+    const rowMatches = html.match(/<tr[^>]*class="gsc_a_tr"[^>]*>/g) ?? [];
+    console.log(
+      `Scholar HTML length=${html.length}, gsc_a_tr opens=${rowMatches.length}, has gsc_a_at=${html.includes("gsc_a_at")}`
+    );
     const pubs = parsePublications(html);
+    console.log(`Parsed ${pubs.length} publications`);
 
     if (pubs.length === 0) {
-      throw new Error("Parser found 0 publications — Scholar layout may have changed");
+      throw new Error(
+        `Parser found 0 publications — Scholar layout may have changed (htmlLen=${html.length}, rowOpens=${rowMatches.length})`
+      );
     }
 
     // Replace all rows

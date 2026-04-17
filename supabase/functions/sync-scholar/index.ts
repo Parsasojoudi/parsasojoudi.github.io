@@ -36,13 +36,17 @@ function parsePublications(html: string): Publication[] {
     // Skip empty skeleton rows (no title link)
     if (!row.includes("gsc_a_at")) continue;
 
-    // Title + link inside <a class="gsc_a_at" href="...">TITLE</a>
-    const titleMatch = row.match(
-      /<a[^>]*class="gsc_a_at"[^>]*href="([^"]*)"[^>]*>([\s\S]*?)<\/a>/
-    );
-    if (!titleMatch) continue;
-    const href = titleMatch[1].replace(/&amp;/g, "&");
-    const title = stripHtml(titleMatch[2]).trim();
+    // Title + link inside <a ... class="gsc_a_at" ...>TITLE</a>.
+    // Attribute order varies, so locate the <a> with class gsc_a_at and parse it loosely.
+    const aTagMatch = row.match(/<a\b[^>]*gsc_a_at[^>]*>([\s\S]*?)<\/a>/);
+    if (!aTagMatch) {
+      console.log("no <a gsc_a_at> in row:", row.slice(0, 200));
+      continue;
+    }
+    const aOpen = aTagMatch[0].slice(0, aTagMatch[0].indexOf(">") + 1);
+    const hrefM = aOpen.match(/href="([^"]*)"/);
+    const href = hrefM ? hrefM[1].replace(/&amp;/g, "&") : "";
+    const title = stripHtml(aTagMatch[1]).trim();
     if (!title) continue;
 
     // Two <div class="gs_gray"> nodes follow: authors, then venue (with year span inside)

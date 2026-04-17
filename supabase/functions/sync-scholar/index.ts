@@ -22,9 +22,15 @@ interface Publication {
 // Parse the Scholar profile HTML to extract publications.
 function parsePublications(html: string): Publication[] {
   const pubs: Publication[] = [];
-  // Each publication row has class "gsc_a_tr"
-  const rowRegex = /<tr[^>]*class="gsc_a_tr"[^>]*>([\s\S]*?)<\/tr>/g;
-  const rows = html.match(rowRegex) ?? [];
+  // Each publication row starts with <tr class="gsc_a_tr">. The </tr> may be omitted
+  // in HTML5 source, so split on row openings and treat each segment as a row.
+  const parts = html.split(/<tr[^>]*class="gsc_a_tr"[^>]*>/);
+  // parts[0] is everything before the first row; skip it.
+  const rows = parts.slice(1).map((seg) => {
+    // Cut off at the next <tr or </tbody/</table to avoid pulling in everything after.
+    const end = seg.search(/<\/tr>|<tr[\s>]|<\/tbody>|<\/table>/);
+    return end === -1 ? seg : seg.slice(0, end);
+  });
 
   for (const row of rows) {
     // Skip empty skeleton rows (no title link)

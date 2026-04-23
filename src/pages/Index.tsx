@@ -16,7 +16,7 @@ const Index = () => {
                 <span className="text-[#00BFFF]">Parsa Sojoudi</span>
               </h1>
               <p className="text-xl md:text-2xl mb-8 text-gray-300">
-                JD Candidate at UVic Law, Class of 2028
+                JD Candidate at UVic Law, Class of 2029
               </p>
               <p className="text-lg mb-8 text-gray-400 leading-relaxed">
                 Combining a strong background in research and development with legal studies. Currently pursuing a Juris Doctor at the University of Victoria, with a passion for intellectual property, technology law, and innovation-driven legal solutions.

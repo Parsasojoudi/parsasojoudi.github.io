@@ -148,7 +148,7 @@ const Resume = () => {
                   <h4 className="font-semibold text-[#2C3E50]">Juris Doctor (J.D.) - Incoming 1L Student</h4>
                   <p className="text-[#00BFFF]">University of Victoria Faculty of Law</p>
                 </div>
-                <span className="text-sm text-gray-600">2025 - 2029</span>
+                <span className="text-sm text-gray-600">2026 - 2029</span>
               </div>
               
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">

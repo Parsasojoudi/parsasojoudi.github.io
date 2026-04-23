@@ -44,7 +44,7 @@ const About = () => {
             </h2>
             <div className="space-y-4 text-gray-700 leading-relaxed">
               <p>
-                With a foundation in engineering and hands-on experience in research, development, and startups, I'm now stepping into the legal world as an incoming JD student at the University of Victoria (Class of 2028). My passion lies at the intersection of innovation and the law, particularly in patent, intellectual property, and technology law.
+                With a foundation in engineering and hands-on experience in research, development, and startups, I'm now stepping into the legal world as an incoming JD student at the University of Victoria (Class of 2029). My passion lies at the intersection of innovation and the law, particularly in patent, intellectual property, and technology law.
               </p>
               <p>
                 Over the years, I've worked closely on projects involving patents and product development, which inspired me to pursue law and support inventors, creators, and tech-driven businesses in protecting their ideas and navigating complex regulatory landscapes.

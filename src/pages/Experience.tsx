@@ -78,8 +78,8 @@ const Experience = () => {
       degree: "Juris Doctor (J.D.)",
       institution: "Faculty of Law, University of Victoria",
       location: "Victoria, BC, Canada",
-      dates: "Sept. 2025 - May. 2028",
-      honors: "Incoming 1L Student, Class of 2028",
+      dates: "Sept. 2025 - May. 2029",
+      honors: "Incoming 1L Student, Class of 2029",
       details: "Passionate about Business Law, with a strong interest in Intellectual Property Law, Technology Law, Patent Law, and Mergers & Acquisitions (M&A)."
     },
     {
